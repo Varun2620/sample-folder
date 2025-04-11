@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt, eum? Placeat consequatur labore, iusto modi
+      vero tempora delectus provident totam ea vitae incidunt</p>
+    </div>
+    <button id="btn" onmouseover="myFunc()" onmouseout="myFuncout()">MouseOver</button>
+    <button id="btn1" onclick="clickFunc()">Click Me</button>
+    </button>
+    <script>
+      function myFunc(){
+        let btn=document.getElementById('btn');
+        btn.style.color='red';
+      }
+
+      function myFuncout(){
+        btn.style.color='black';
+      }
+
+      function clickFunc(){
+        btn1.innerHTML='Thank You';
+      }  
+    </script>
+  </body>
+
+</html>

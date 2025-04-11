@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax-1 textfile</title>
+</head>
+
+<body>
+    <button id="btn">Get text file</button>
+    
+    <script>
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click', () => {
+            //Create XHR Object
+            let xhr = new XMLHttpRequest();
+            //Open - type ,url/file nme, async
+            xhr.open('GET', 'sample.txt', true);
+
+            // xhr.onload = function () {
+            //     if (this.status === 200) {
+            //         console.log(this.responseText);
+            //     }
+            // }
+
+            xhr.onreadystatechange=function(){
+                if(this.readyState===4 && this.status===200){
+                    console.log(this.responseText)
+                }
+            }
+
+            //Send req
+            xhr.send();
+        });
+
+        /*ready state values
+        0:req not initialised
+        1:server conn established
+        2:req recieved
+        3:processing req
+        4:req finished & response ready*/
+
+        /*http statuses
+        200:ok
+        403:forbidden
+        404:not found*/
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #container{
+            width: 1000px;
+            height: 750px;
+            background-color: blue;
+            display: flex;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .box{
+            margin: 0px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            width: 500px;
+            height: 250px;
+            color: rgb(255, 255, 255);
+            background-color:rgb(0, 0, 0);
+            text-align: center;
+        }
+
+        @media only screen and (min-width:201px) and (max-width:500px){
+            #container{
+                background-color:grey;
+            }
+        }
+
+        @media only screen and (min-width:0px) and (max-width:200px){
+            #container{
+                background-color:green;
+            }
+            .box{
+                background-color: greenyellow;
+                color: black;
+            }
+        }
+
+        @media only screen and (min-width:501px) and (max-width:1000px){
+            .box:hover{
+                color:green;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima magni omnis similique.
+        </div>
+    </div>
+</body>
+</html>

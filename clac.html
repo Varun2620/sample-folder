@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Orbit', sans-serif;
+            
+        }
+        
+        .headin{
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+            padding: 12px;
+            color: sienna;
+        }
+
+        .headin::before{
+            content: '';
+            background: url('../image/tablet-254581_1280.jpg') no-repeat center center/cover;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top:0px;
+            left: 0px;
+            z-index: -1;
+            opacity: 1;
+        }
+
+        #calc {
+            font-size: 16px;
+            display: flex;
+            padding: 10px;
+            border-radius: 1em;
+            height: 380px;
+            width: 400px;
+            margin: auto;
+            background-image: linear-gradient(to bottom, rgb(4, 0, 109), rgb(104, 44, 255));
+            opacity: 0.8;
+            box-shadow: rgba(0, 0, 0, 0.49) 0px 10px 20px, rgba(0, 0, 0, 0.54) 0px 6px 6px;
+            align-items: center;
+            justify-content: center;
+            justify-items: center; 
+        }
+
+        .disp{
+            display: inline;
+        }
+
+        #result{
+            width:165px;
+            height: 45px;
+        }
+
+        input {
+            width: 50px;
+            height: 50px;
+            color: bisque;
+            background-image: linear-gradient(to top, rgb(165, 12, 211),rgb(111, 31, 76));    
+        }
+
+        input:hover{
+            background-image: linear-gradient(to top,rgb(111, 31, 76), rgb(165, 12, 211));
+        }
+    </style>
+</head>
+
+<body>
+    <div class="headin">
+        <h1>Calculator</h1>
+    </div>
+    <table id="calc">
+        <tr class="disp">
+            <td colspan="3">
+                <input type="text" id="result" style="background-image: none; color: black;">
+            </td>
+            <td>
+                <input type="button" value="c" onclick="clearScr()" style="margin-left:9px">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="1" onclick="dis('1')" onkeydown="myfunction(event)">
+                <input type="button" value="2" onclick="dis('2')" onkeydown="myfunction(event)">
+                <input type="button" value="3" onclick="dis('3')" onkeydown="myfunction(event)">
+                <input type="button" value="+" onclick="dis('+')" onkeydown="myfunction(event)">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="4" onclick="dis('4')" onkeydown="myfunction(event)">
+                <input type="button" value="5" onclick="dis('5')" onkeydown="myfunction(event)">
+                <input type="button" value="6" onclick="dis('6')" onkeydown="myfunction(event)">
+                <input type="button" value="-" onclick="dis('-')" onkeydown="myfunction(event)">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="7" onclick="dis('7')" onkeydown="myfunction(event)">
+                <input type="button" value="8" onclick="dis('8')" onkeydown="myfunction(event)">
+                <input type="button" value="9" onclick="dis('9')" onkeydown="myfunction(event)">
+                <input type="button" value="/" onclick="dis('/')" onkeydown="myfunction(event)">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="." onclick="dis('.')" onkeydown="myfunction(event)">
+                <input type="button" value="0" onclick="dis('0')" onkeydown="myfunction(event)">
+                <input type="button" value="=" onclick="solve()">
+                <input type="button" value="*" onclick="dis('*')" onkeydown="myfunction(event)">
+            </td>
+        </tr>
+    </table>
+    <script>
+        function dis(val) {
+            let dis = document.getElementById('result');
+            dis.value += val;
+        }
+
+        function clearScr() {
+            document.getElementById('result').value = "";
+        }
+
+        function myfunction(event) {
+            if (event.key === ' 0' || event.key === ' 1 ' || event.key === '  ' || event.key === ' 3 ' || event.key === ' 4 ' || event.key === ' 5 '
+                || event.key === ' 6 ' || event.key === ' 7 ' || event.key === ' 8 ' || event.key === ' 9 ' || event.key === '+' || event.key === ' - '
+                || event.key === ' * ' || event.key === ' / ') {
+                document.getElementById('result').value += event.key;
+            }
+        }
+
+        function solve() {
+            let p = document.getElementById('result').value;
+            let q = eval(p);
+            document.getElementById('result').value = q;
+        }
+
+
+    </script>
+</body>
+
+</html>

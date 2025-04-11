@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Events</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container{
+            text-align: center;
+        }
+
+        .container p{
+            text-align: justify;
+        }
+
+        #btn{
+            /* display: flex;
+
+            align-items: center; */
+            margin: 10px 0px;
+            padding: 10px 20px;
+            color: red;
+            border: 2px solid red;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>This is my heading</h1>
+        <p id="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum asperiores vel error cum incidunt laboriosam
+            rerum accusamus earum reiciendis esse consequatur repellendus nemo aut magni, quibusdam, doloribus culpa rem
+            officiis debitis itaque reprehenderit similique, minima perferendis! Est ipsam magni velit nihil provident
+            praesentium, suscipit eum ex animi sed quis, architecto laboriosam impedit, itaque beatae aspernatur sit? In
+            cupiditate eius debitis magnam vitae asperiores suscipit voluptatum. Iste voluptate odit assumenda deleniti
+            cupiditate natus culpa ex magnam quod! Dolores maxime velit odit cupiditate iure voluptates sunt aspernatur
+            quam maiores, porro, accusamus eum! Officiis mollitia, facilis pariatur harum sed corrupti, nesciunt
+            repellendus assumenda cumque modi est eum eveniet, quidem quod dolorem excepturi vel molestiae id magnam sit
+            animi facere quam. Blanditiis iure tempore tenetur consequatur? Accusantium illum sunt dolor esse
+            repudiandae optio explicabo, excepturi dolores magni reprehenderit autem corrupti dicta aliquam, ea
+            voluptatum maiores debitis, ipsa fugit quas fuga. Consequuntur nisi veniam harum aliquid dolore alias a,
+            debitis, voluptatem odit quam totam reiciendis excepturi libero distinctio illo, ipsam pariatur in sint.
+            Debitis laudantium dicta nostrum dignissimos sunt placeat illo velit facilis cum sapiente beatae animi ipsam
+            esse ratione ab numquam eum, rerum, eos, deserunt fugit facere natus. Molestiae voluptatum, a eveniet minus
+            iusto id eligendi adipisci, reiciendis repellendus quia amet autem, mollitia optio doloremque beatae fuga
+            sint hic debitis at molestias tempore tempora ratione accusamus ipsa? Quos accusamus doloremque fuga, unde
+            magnam perspiciatis tenetur itaque saepe amet.</p>
+    </div>
+    <button id="btn" onclick="toggleHide()">Show/Hide</button>
+
+    <script>
+        function toggleHide(){
+            let btn=document.getElementById('btn');
+            let para=document.getElementById('para');
+            if(para.style.display==='none'){
+                para.style.display='block';
+            }
+            else{
+                para.style.display='none';
+            }
+        }
+    </script>
+</body>
+
+</html>

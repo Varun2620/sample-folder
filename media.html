@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=REM:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'REM', sans-serif;
+        }
+
+        #navbar {
+            display: flex;
+            height: 50px;
+        }
+
+        #navbar ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            /* background-color: black; */
+        }
+
+        #navbar ul li {
+            list-style-type: none;
+            margin: 10px;
+            padding: 3px 10px;
+        }
+
+        #navbar ul li a {
+            display: flex;
+            justify-content: center;
+            width: 100px;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 17px;
+        }
+
+        #navbar ul li a:hover {
+            color: black;
+            background-color: white;
+        }
+
+        #navbar::before {
+            content: '';
+            background-color: black;
+            top: 0px;
+            left: 0px;
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        #container {
+            display: flex;
+            flex-flow: column wrap;
+            height: 500px;
+            justify-content: center;
+            align-content: center;
+
+        }
+
+        #container::before {
+            content: '';
+            background: url('../image/unsplash.jpg') no-repeat center center/cover;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.9;
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            position: relative;
+            color: bisque;
+        }
+
+        #para {
+            display: flex;
+            margin: 10px;
+            padding: 2px 12px;
+        }
+
+        #btn {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10px auto;
+            color: black;
+            background-color: bisque;
+            height: 50px;
+            width: 100px;
+            justify-content: center;
+            align-content: center;
+            font-size: 16px;
+            border-radius: 40px;
+        }
+
+        #btn:hover {
+            color: bisque;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <div id="container">
+        <h1 class="box">To a better tommorrow</h1>
+        <p id="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. In asperiores repudiandae rerum debitis
+            natus,quis, repellat voluptatum fugiat omnis harum recusandae exercitationem molestiae alias. Lorem ipsum, dolor
+            sit amet consectetur adipisicing elit. Laudantium rem voluptates commodi voluptatem totam magnam omnis nisi,
+            libero consequatur aliquam blanditiis amet quo ab dignissimos esse suscipit officia at temporibus, nulla
+            ducimus corporis possimus dolore. Adipisci accusantium enim odio ea. Veritatis deleniti exercitationem ullam
+            odio obcaecati. Numquam quasi cum officiis dolorum, omnis, possimus aut esse earum quos voluptas voluptates
+            iure assumenda accusamus nisi similique molestiae ad quis maiores minima ipsam. Laudantium mollitia
+            perspiciatis magni molestias, error quidem. Quasi magni nobis dicta quia omnis, incidunt, possimus porro
+            recusandae ratione ad ipsam, blanditiis mollitia vitae! Laboriosam consequuntur minima quo modi praesentium
+            debitis nemo ea porro explicabo, fuga distinctio laborum provident? Sunt natus ea vel eos modi nam quae
+            quidem atque expedita ducimus provident aliquid quos, sit rem odit tempore vitae officiis esse molestiae
+            porro. Dicta aut ipsum tempora omnis consequatur dolores reprehenderit! Ipsa voluptatibus maxime sapiente,
+            atque consequuntur voluptate! Molestiae doloremque facilis sint sapiente ex perspiciatis in aperiam repellat
+            alias eligendi distinctio temporibus ad inventore quam maiores, ducimus repudiandae dolor labore officiis
+            ab! Reiciendis illum ab quod sint quisquam nisi eum rerum iusto id maiores aperiam error, earum voluptatem
+            eaque ea deserunt natus eos labore architecto impedit. Maiores maxime corrupti officia corporis, illum rerum
+            quos dolores hic eum quidem eligendi, a tempora repellendus nam assumenda veritatis mollitia rem magni
+            dolorem sed tempore? Dolores explicabo necessitatibus repellat deserunt fuga rerum error quisquam vel
+            possimus ullam? Nulla?</p>
+    </div>
+    <button id="btn" onclick="toggle()">Show/Hide</button>
+
+    <script>
+        function toggle(){
+            let btn=document.getElementById('btn');
+            let para=document.getElementById('para');
+
+            if(para.style.display==='none'){
+                para.style.display='flex';
+            }
+            else{
+                para.style.display='none';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
